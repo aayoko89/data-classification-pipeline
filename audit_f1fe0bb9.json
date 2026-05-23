@@ -1,0 +1,71 @@
+{
+  "run_id": "f1fe0bb9",
+  "timestamp": "2026-05-23T20:07:24.243546+00:00",
+  "total_columns_scanned": 7,
+  "classifications": {
+    "PII": 2,
+    "PHI": 1,
+    "FINANCIAL": 2,
+    "INTERNAL": 2
+  },
+  "masking_applied": 5,
+  "masking_skipped": 2,
+  "details": [
+    {
+      "column": "email_address",
+      "table": "LIBERTY_DB.CUSTOMERS.ACCOUNTS",
+      "tier": "PII",
+      "confidence": 0.9,
+      "reason": "Column name matched PII keyword",
+      "method": "pattern"
+    },
+    {
+      "column": "social_security_number",
+      "table": "LIBERTY_DB.CUSTOMERS.ACCOUNTS",
+      "tier": "PII",
+      "confidence": 0.9,
+      "reason": "Column name matched PII keyword",
+      "method": "pattern"
+    },
+    {
+      "column": "diagnosis_code",
+      "table": "LIBERTY_DB.CLAIMS.MEDICAL",
+      "tier": "PHI",
+      "confidence": 0.9,
+      "reason": "Column name matched PHI keyword",
+      "method": "pattern"
+    },
+    {
+      "column": "credit_card_number",
+      "table": "LIBERTY_DB.PAYMENTS.TRANSACTIONS",
+      "tier": "FINANCIAL",
+      "confidence": 0.9,
+      "reason": "Column name matched FINANCIAL keyword",
+      "method": "pattern"
+    },
+    {
+      "column": "annual_salary",
+      "table": "LIBERTY_DB.PAYMENTS.TRANSACTIONS",
+      "tier": "FINANCIAL",
+      "confidence": 0.9,
+      "reason": "Column name matched FINANCIAL keyword",
+      "method": "pattern"
+    },
+    {
+      "column": "policy_type",
+      "table": "LIBERTY_DB.PRODUCTS.POLICIES",
+      "tier": "INTERNAL",
+      "confidence": 0.75,
+      "reason": "No sensitive pattern found",
+      "method": "fallback"
+    },
+    {
+      "column": "created_at",
+      "table": "LIBERTY_DB.PRODUCTS.POLICIES",
+      "tier": "INTERNAL",
+      "confidence": 0.75,
+      "reason": "No sensitive pattern found",
+      "method": "fallback"
+    }
+  ]
+}
